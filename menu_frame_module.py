@@ -1,9 +1,15 @@
 import tkinter as tk
 
+###################################################
+# 좌측에 보이는 메뉴 버튼들을 위한 class
+# view_other_frame_callback(main.py 의 view_other_frame함수)를 수정하고 싶으면 팀장에 문의
+# 이 파일 외에 다른 파일의 내용은 절대 수정하지 말고, 수정 원하면 팀장에 문의
+###################################################
+
 class MenuFrame(tk.Frame):
-    def __init__(self, parent, view_other_frame, frame_list, *args, **kwargs):
+    def __init__(self, parent, view_other_frame_callback, frame_list, *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
-        self.view_other_frame_callback = view_other_frame
+        self.view_other_frame_callback = view_other_frame_callback
         self.frame_list = frame_list
         self.configure(relief="solid", bd=2)
         self.create_widgets()
